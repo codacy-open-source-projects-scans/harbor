@@ -421,7 +421,12 @@
         "SELECT_PERMISSIONS": "选择权限",
         "SELECT_SYSTEM_PERMISSIONS": "选择系统权限",
         "SELECT_PROJECT_PERMISSIONS": "选择项目权限",
-        "SYSTEM_PERMISSIONS": "系统权限"
+        "SYSTEM_PERMISSIONS": "系统权限",
+        "ROBOT": "机器人账户",
+        "USER": "用户",
+        "LDAPUSER": "LDAP 用户",
+        "GROUP": "用户组",
+        "MEMBER": "项目成员"
     },
     "WEBHOOK": {
         "EDIT_BUTTON": "编辑",
@@ -1624,6 +1629,9 @@
         "TRIGGER": "触发器",
         "CREATED": "创建时间",
         "DESCRIPTION": "描述",
+        "SCOPE": "范围",
+        "SCOPE_SINGLE_PEER": "单节点",
+        "SCOPE_ALL_PEERS": "全节点",
         "NO_POLICY": "暂无记录",
         "ENABLED_POLICY_SUMMARY": "是否启用策略 {{name}}?",
         "DISABLED_POLICY_SUMMARY": "是否禁用策略 {{name}}?",

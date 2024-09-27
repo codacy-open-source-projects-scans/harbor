@@ -423,7 +423,12 @@
         "SELECT_PERMISSIONS": "Select Permissions",
         "SELECT_SYSTEM_PERMISSIONS": "Select System Permissions",
         "SELECT_PROJECT_PERMISSIONS": "Select Project Permissions",
-        "SYSTEM_PERMISSIONS": "System Permissions"
+        "SYSTEM_PERMISSIONS": "System Permissions",
+        "ROBOT": "Robot Account",
+        "USER": "User",
+        "LDAPUSER": "LDAP User",
+        "GROUP": "User Group",
+        "MEMBER": "Project Member"
     },
     "WEBHOOK": {
         "EDIT_BUTTON": "EDIT",
@@ -1625,6 +1630,9 @@
         "TRIGGER": "Trigger",
         "CREATED": "Erzeugt am",
         "DESCRIPTION": "Beschreibung",
+        "SCOPE": "Umfang",
+        "SCOPE_SINGLE_PEER": "Einzelner Peer",
+        "SCOPE_ALL_PEERS": "Alle Peers",
         "NO_POLICY": "Keine Regelwerke",
         "ENABLED_POLICY_SUMMARY": "Soll das Regelwerk {{name}} aktiviert werden?",
         "DISABLED_POLICY_SUMMARY": "Soll das Regelwerk {{name}} deaktiviert werden?",

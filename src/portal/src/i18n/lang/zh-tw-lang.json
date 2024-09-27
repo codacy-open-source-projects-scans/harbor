@@ -422,7 +422,12 @@
    "SELECT_PERMISSIONS": "Select Permissions",
    "SELECT_SYSTEM_PERMISSIONS": "Select System Permissions",
    "SELECT_PROJECT_PERMISSIONS": "Select Project Permissions",
-   "SYSTEM_PERMISSIONS": "System Permissions"
+   "SYSTEM_PERMISSIONS": "System Permissions",
+   "ROBOT": "Robot Account",
+   "USER": "User",
+   "LDAPUSER": "LDAP User",
+   "GROUP": "User Group",
+   "MEMBER": "Project Member"
   },
   "WEBHOOK": {
     "EDIT_BUTTON": "編輯",
@@ -1620,6 +1625,9 @@
     "TRIGGER": "觸發器",
     "CREATED": "建立時間",
     "DESCRIPTION": "描述",
+    "SCOPE": "範圍",
+    "SCOPE_SINGLE_PEER": "單節點",
+    "SCOPE_ALL_PEERS": "全節點",
     "NO_POLICY": "無原則",
     "ENABLED_POLICY_SUMMARY": "您是否要啟用原則 {{name}}？",
     "DISABLED_POLICY_SUMMARY": "您是否要停用原則 {{name}}？",

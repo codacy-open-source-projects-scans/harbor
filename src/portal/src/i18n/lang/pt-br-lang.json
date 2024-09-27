@@ -421,7 +421,12 @@
         "SELECT_PERMISSIONS": "Select Permissions",
         "SELECT_SYSTEM_PERMISSIONS": "Select System Permissions",
         "SELECT_PROJECT_PERMISSIONS": "Select Project Permissions",
-        "SYSTEM_PERMISSIONS": "System Permissions"
+        "SYSTEM_PERMISSIONS": "System Permissions",
+        "ROBOT": "Robot Account",
+        "USER": "User",
+        "LDAPUSER": "LDAP User",
+        "GROUP": "User Group",
+        "MEMBER": "Project Member"
     },
     "GROUP": {
         "GROUP": "Grupo",
@@ -1622,6 +1627,9 @@
         "TRIGGER": "Disparo",
         "CREATED": "Criado em",
         "DESCRIPTION": "Descrição",
+        "SCOPE": "Escopo",
+        "SCOPE_SINGLE_PEER": "Par único",
+        "SCOPE_ALL_PEERS": "Todos os pares",
         "NO_POLICY": "Nenhuma política",
         "ENABLED_POLICY_SUMMARY": "Gostaria de habilitar a política {{name}}?",
         "DISABLED_POLICY_SUMMARY": "Gostaria de desabilitar a política {{name}}?",
