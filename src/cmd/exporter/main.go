@@ -15,12 +15,13 @@
 package main
 
 import (
+	"errors"
 	"net/http"
 	"os"
 	"strings"
 	"time"
 
-	_ "github.com/jackc/pgx/v4/stdlib" // registry pgx driver
+	_ "github.com/jackc/pgx/v5/stdlib" // registry pgx driver
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/spf13/viper"
 
@@ -99,7 +100,7 @@ func main() {
 		exporterOpt.CacheCleanInterval,
 	)
 	prometheus.MustRegister(harborExporter)
-	if err := harborExporter.ListenAndServe(); err != nil {
+	if err := harborExporter.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 		log.Errorf("Error starting Harbor exporter %s", err)
 		os.Exit(1)
 	}

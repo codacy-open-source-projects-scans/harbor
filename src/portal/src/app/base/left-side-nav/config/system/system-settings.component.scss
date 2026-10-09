@@ -165,7 +165,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   appearance: textfield;
 }
 
@@ -176,7 +176,6 @@ input[type=number] {
 
 .flex-baseline {
   display: flex;
-  align-items: baseline;
 }
 
 $message-type-width: 12rem;

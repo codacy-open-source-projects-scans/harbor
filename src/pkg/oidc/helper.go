@@ -105,9 +105,12 @@ func (p *providerHelper) create(ctx context.Context) error {
 
 var provider = &providerHelper{}
 
+// Used only when an admin disables OIDC certificate verification.
+// The default path verifies certificates; this fallback still requires TLS 1.2+.
 var insecureTransport = &http.Transport{
 	TLSClientConfig: &tls.Config{
-		InsecureSkipVerify: true,
+		MinVersion:         tls.VersionTLS12,
+		InsecureSkipVerify: true, // nolint:gosec // G402: gated by admin-controlled OIDCSetting.VerifyCert
 	},
 	Proxy: http.ProxyFromEnvironment,
 }
@@ -143,7 +146,7 @@ func getOauthConf(ctx context.Context) (*oauth2.Config, error) {
 	}
 	scopes := make([]string, 0)
 	for _, sc := range setting.Scope {
-		if strings.HasPrefix(p.Endpoint().AuthURL, googleEndpoint) && sc == gooidc.ScopeOfflineAccess {
+		if strings.HasPrefix(strings.ToLower(p.Endpoint().AuthURL), googleEndpoint) && sc == gooidc.ScopeOfflineAccess {
 			log.Warningf("Dropped unsupported scope: %s ", sc)
 			continue
 		}
@@ -176,7 +179,7 @@ func AuthCodeURL(ctx context.Context, state string, pkceCode pkce.Code) (string,
 	for k, v := range setting.ExtraRedirectParms {
 		options = append(options, oauth2.SetAuthURLParam(k, v))
 	}
-	if strings.HasPrefix(conf.Endpoint.AuthURL, googleEndpoint) { // make sure the refresh token will be returned
+	if strings.HasPrefix(strings.ToLower(conf.Endpoint.AuthURL), googleEndpoint) { // make sure the refresh token will be returned
 		options = append(options, oauth2.AccessTypeOffline)
 		options = append(options, oauth2.SetAuthURLParam("prompt", "consent"))
 	}
@@ -222,7 +225,6 @@ func VerifyToken(ctx context.Context, rawIDToken string) (*gooidc.IDToken, error
 }
 
 func verifyTokenWithConfig(ctx context.Context, rawIDToken string, conf *gooidc.Config) (*gooidc.IDToken, error) {
-	log.Debugf("Raw ID token for verification: %s", rawIDToken)
 	p, err := provider.get(ctx)
 	if err != nil {
 		return nil, err
